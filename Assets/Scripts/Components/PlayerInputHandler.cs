@@ -64,6 +64,7 @@ public class PlayerInputHandler : MonoBehaviour
             else if (col.CompareTag("ConnectionPoint") && player != null)
             {
                 Debug.Log("Clicked connection point");
+                foundObject = true;
             }
         }
 
