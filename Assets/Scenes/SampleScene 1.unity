@@ -368,7 +368,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.049999952, y: -0.81999993}
+  m_ConnectedAnchor: {x: 0.049999952, y: -1.6399999}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -631,48 +631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 647066c33ab97f34eb02dd35319a8d7c, type: 3}
---- !u!1 &1558199643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6611395416963072285, guid: 55d2c5e278dce194f8e35d4f03dbd948, type: 3}
+--- !u!50 &1558199644 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4957412941387077051, guid: 55d2c5e278dce194f8e35d4f03dbd948, type: 3}
   m_PrefabInstance: {fileID: 1201853336945669808}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1558199644
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558199643}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &1558199647
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558199643}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &1833827763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2815826989966985745, guid: 647066c33ab97f34eb02dd35319a8d7c, type: 3}
