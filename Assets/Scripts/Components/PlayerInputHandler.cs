@@ -52,12 +52,18 @@ public class PlayerInputHandler : MonoBehaviour
                 if (player == col.gameObject)
                 {
                     player = null;
+                    Debug.Log("Deselected player");
                 }
                 else
                 {
                     player = col.gameObject;
+                    Debug.Log("Selected player");
                 }
                 foundObject = true;
+            }
+            else if (col.CompareTag("ConnectionPoint") && player != null)
+            {
+                Debug.Log("Clicked connection point");
             }
         }
 
