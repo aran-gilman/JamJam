@@ -76,3 +76,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickCooldownDuration: 0.3
+  ropePrefab: {fileID: 2090148688275673607, guid: 2e30da670111d1f4eb8b386f7cea67f4, type: 3}

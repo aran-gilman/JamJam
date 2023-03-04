@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8892495120688667799}
   - component: {fileID: 7200046421386527524}
+  - component: {fileID: 6511282196761951652}
   m_Layer: 0
   m_Name: ConnectionPoint
   m_TagString: ConnectionPoint
@@ -48,3 +49,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &6511282196761951652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715065058522139567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8552f8e847a94c47954f73c2be651af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}

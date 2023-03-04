@@ -9,6 +9,9 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField]
     private float clickCooldownDuration = 0.1f;
 
+    [SerializeField]
+    private GameObject ropePrefab;
+
     private Vector2 mousePos;
     private Camera mainCamera;
 
@@ -85,6 +88,7 @@ public class PlayerInputHandler : MonoBehaviour
             if (col.CompareTag("ConnectionPoint"))
             {
                 Debug.Log("Clicked connection point");
+                //ConnectionPoint point = col.GetComponent<ConnectionPoint>();
             }
         }
     }
