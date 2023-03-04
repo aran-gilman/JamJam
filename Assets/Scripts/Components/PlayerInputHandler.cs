@@ -61,16 +61,31 @@ public class PlayerInputHandler : MonoBehaviour
                 }
                 foundObject = true;
             }
-            else if (col.CompareTag("ConnectionPoint") && player != null)
-            {
-                Debug.Log("Clicked connection point");
-                foundObject = true;
-            }
         }
 
         if (!foundObject && player != null)
         {
             player.GetComponent<PlayerMovement>().SetDestination(worldPos);
+        }
+    }
+
+    private void OnConnect()
+    {
+        if (clickCooldown > 0 || player == null)
+        {
+            return;
+        }
+        clickCooldown = clickCooldownDuration;
+
+        Vector2 worldPos = mainCamera.ScreenToWorldPoint(mousePos);
+        Collider2D[] cols = Physics2D.OverlapPointAll(worldPos);
+
+        foreach (Collider2D col in cols)
+        {
+            if (col.CompareTag("ConnectionPoint"))
+            {
+                Debug.Log("Clicked connection point");
+            }
         }
     }
 }
