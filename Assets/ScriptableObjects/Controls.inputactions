@@ -15,6 +15,24 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "MoveTo",
+                    "type": "PassThrough",
+                    "id": "bb6fba18-3abd-4676-b635-5ef0b9dea8ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "3c3c57e3-fbbe-466e-aaec-9b50dbddf5b3",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "1893950c-ef0e-4004-9f53-beb3b91386ec",
@@ -209,6 +227,83 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f88afb8-315d-4c63-accf-5b71644c7362",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1f0e89a-3c14-4ede-a042-ce07e8effee5",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96db0cf6-8b93-4d81-bda6-0a5642035ec7",
+                    "path": "<Touchscreen>/touch*/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29de0b3d-4b0e-48cd-abb1-57b3bf47a976",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveTo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87bab2ff-5678-439e-8214-bc8650023beb",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveTo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6321ae24-72ba-4e40-b20d-cc3dc580316b",
+                    "path": "<Touchscreen>/touch*/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "MoveTo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85a293d2-31bb-4377-a815-9add9f97696d",
+                    "path": "<XRController>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "MoveTo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
