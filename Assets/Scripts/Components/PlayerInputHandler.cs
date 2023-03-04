@@ -3,32 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput), typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Maximum move speed in units/second")]
-    private float maxMoveSpeed;
+    private float clickCooldownDuration = 0.1f;
 
-    [SerializeField]
-    private float destinationReachedTolerance = 0.5f;
-
-    private Rigidbody2D rb;
     private Vector2 mousePos;
     private Camera mainCamera;
 
-    public Vector3 CurrentDestination { get; private set; }
+    private GameObject player;
+    private float clickCooldown = 0.0f;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
     }
 
-    private void OnMove(InputValue value)
+    private void Update()
     {
-        Vector2 inVector = value.Get<Vector2>();
-        rb.velocity = inVector * maxMoveSpeed;
+        if (clickCooldown > 0)
+        {
+            clickCooldown -= Time.deltaTime;
+        }
     }
 
     private void OnPoint(InputValue value)
@@ -36,23 +33,58 @@ public class PlayerInputHandler : MonoBehaviour
         mousePos = value.Get<Vector2>();
     }
 
-    private void OnMoveTo()
+    private void OnClick()
     {
-        CurrentDestination = mainCamera.ScreenToWorldPoint(mousePos);
-        CurrentDestination = new Vector3(CurrentDestination.x, CurrentDestination.y, 0);
-        Vector3 direction = (CurrentDestination - transform.position).normalized;
-        rb.velocity = direction * maxMoveSpeed;
+        if (clickCooldown > 0)
+        {
+            return;
+        }
+        clickCooldown = clickCooldownDuration;
+
+        Vector2 worldPos = mainCamera.ScreenToWorldPoint(mousePos);
+        Collider2D[] cols = Physics2D.OverlapPointAll(worldPos);
+
+        bool foundObject = false;
+        foreach (Collider2D col in cols)
+        {
+            if (col.CompareTag("Player"))
+            {
+                if (player == col.gameObject)
+                {
+                    player = null;
+                    Debug.Log("Deselected player");
+                }
+                else
+                {
+                    player = col.gameObject;
+                    Debug.Log("Selected player");
+                }
+                foundObject = true;
+            }
+        }
+
+        if (!foundObject && player != null)
+        {
+            player.GetComponent<PlayerMovement>().SetDestination(worldPos);
+        }
     }
 
-    private void Update()
+    private void OnConnect()
     {
-        if (rb.velocity.magnitude > 0)
+        if (clickCooldown > 0 || player == null)
         {
-            float distance = Vector3.Distance(transform.position, CurrentDestination);
-            Debug.Log(distance);
-            if (distance < destinationReachedTolerance)
+            return;
+        }
+        clickCooldown = clickCooldownDuration;
+
+        Vector2 worldPos = mainCamera.ScreenToWorldPoint(mousePos);
+        Collider2D[] cols = Physics2D.OverlapPointAll(worldPos);
+
+        foreach (Collider2D col in cols)
+        {
+            if (col.CompareTag("ConnectionPoint"))
             {
-                rb.velocity = Vector3.zero;
+                Debug.Log("Clicked connection point");
             }
         }
     }
